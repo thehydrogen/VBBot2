@@ -1,7 +1,9 @@
 
 { 
-  "token"  : "yeah you're not getting this",
-  "prefix" : "-",
-  "ownerID": "275775739998240769",
-  "datacollectionServer": "varonbros-datacollector.v3.api.facebook.com"
+  "prefix": "-",
+    "test_token": "not for you",
+    "token": "nah fam",
+    "ownerID": "275775739998240769",
+    "webhookid": "485520789513306133", 
+    "webhooktoken": "no u"
 }
