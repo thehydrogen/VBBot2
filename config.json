@@ -2,5 +2,6 @@
 { 
   "token"  : "yeah you're not getting this",
   "prefix" : "-",
-  "ownerID": "275775739998240769"
+  "ownerID": "275775739998240769",
+  "datacollectionServer": "varonbros-datacollector.v3.api.facebook.com"
 }
