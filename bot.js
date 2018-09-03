@@ -1,17 +1,17 @@
 const Discord = require('discord.js')
-const bot = new Discord.Client()
+const Client = new Discord.Client()
 
 const fs = require("fs");
 const config = JSON.parse(fs.readFileSync("./Configuration/config.json", "utf8"));
 
-bot.login(config.token) //vb token
+Client.login(config.token) //vb token
 
-bot.on('ready', function() {
-    console.log(`${bot.user.tag} is online`)
-    bot.user.setActivity('https://youtube.com/VaronBros', { type: 'WATCHING' })
+Client.on('ready', function() {
+    console.log(`${Client.user.tag} is online`)
+    Client.user.setActivity('https://youtube.com/VaronBros', { type: 'WATCHING' })
 })
 
-bot.on('message', function(message) {
+Client.on('message', function(message) {
 
     var command = message.content.split(" ")[0].slice(config.prefix.length).toLowerCase()
     var args = message.content.split(" ").slice(1);
@@ -24,9 +24,13 @@ bot.on('message', function(message) {
         return;
     }
 
+    if(command === "feedback") {
+        require(`./Commands/feedback.js`).run(Client, config, message, args, content, Discord, reason)
+    }
+
 })
 
-bot.on('messageDelete', function(message) {
+Client.on('messageDelete', function(message) {
 
     var args = message.content.split(" ").slice(1);
     let content = args.join(" ")
